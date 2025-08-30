@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Petrona Puppy</title>
+     <!-- bootstrap link-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--fontawsome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--custom link-->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color:#FFF1F2 ;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+    .navbar-toggler {
+        border: 1px solid #E11D48; /* Visible border */
+        outline: #E11D48;
+    }
+    
+    .carousel-item img {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        right: 5%;
+        left: 5%;
+        bottom: 10%;
+    }
+}
+
+h1, h3, h6 {
+    color:  #E11D48;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 15px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+}
+
+/* For container-fluid option */
+.container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+footer .row div {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- MAIN CONTAINER -->
+    <div class="container-fluid p-0">
+         <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="/img/logo.jpeg" alt="Logo" class="img-fluid logo">
+            <span style="font-family:segoe script" class="ms-2 site-title"><i>PETRONA PUPPY</i></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./breeds.html">Breeds</a></li>
+                <li class="nav-item"><a class="nav-link" href="./behaviour.html">Puppy Care</a></li>
+                <li class="nav-item"><a class="nav-link" href="./food&nutrition.html">Food & Nutrition</a></li>
+                <li class="nav-item"><a class="nav-link" href="./FAQ.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contactus.html">Contact Us</a></li>
+
+                <!-- Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="externalPagesDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        About Dogs
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/aboutdogs/gallery.html"><i>Gallery</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/golden.html"><i>Golden Retriever</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/german.html"><i>German Shepherd</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/australian.html"><i>Australian Shepherd</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/pomeranian.html"><i>Pomeranian</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/siberian.html"><i>Siberian Husky</i></a></li>
+                        <li><a class="dropdown-item" href="/aboutdogs/bulldog.html"><i>Bulldog</i></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" id="extra">
+    <br>
+    <br>
+    <br>
+<div >
+<h1 style="font-family:segoe script">Dogs as intelligent as 2-year-old Kids</h2>
+    <hr>
+    <p>By Jeanna Bryner, Live Science Managing Editor | August 8, 2009 10:00am ET</p>
+    <img src="/img/blog1.jpg" alt="" id="beagle" hspace="20" width="600px">
+    <p> <font size="3"><br><br> The canine IQ test results are in: Even the average dog has the mental abilities of a 2-year-old child.
+
+        The finding is based on a language development test, revealing average dogs can learn 165 words (similar to a 2-year-old child), including signals and gestures, and dogs in the top 20 percent in intelligence can learn 250 words.
+        
+        And the smartest?Border collies, poodles, and German shepherds, in that order, says Stanley Coren, a canine expert and professor emeritus at the University of British Columbia. Those breeds have been created recently compared with other dog breeds and may be smarter in part because we've trained and bred them to be so, Coren said. The dogs at the top of the pack are on par with a 2.5-year-old.
+
+        Better at math and socializing<br>
+        
+        While dogs ranked with the 2-year-olds in language, they would trump a 3- or 4-year-old in basic arithmetic, Coren found. In terms of social smarts, our drooling furballs fare even better.
+        
+        "The social life of dogs is much more complex, much more like human teenagers at that stage, interested in who is moving up in the pack and who is sleeping with who and that sort of thing," Coren told LiveScience.
+        
+        Coren, who has written more than a half-dozen books on dogs and dog behavior, will present an overview of various studies on dog smarts at the American Psychological Association's annual meeting in Toronto.
+        
+        "We all want insight into how our furry companions think, and we want to understand the silly, quirky and apparently irrational behaviors [that] Lassie or Rover demonstrate," Coren said. "Their stunning flashes of brilliance and creativity are reminders that they may not be Einsteins but are sure closer to humans than we thought."
+        
+        Math test<br>
+        
+        To get inside the noggin of man's best friend, scientists are modifying tests for dogs that were originally developed to measure skills in children.
+        
+        Here's one: In an arithmetic test, dogs watch as one treat and then another treat are lowered down behind a screen. When the screen gets lifted, the dogs, if they get arithmetic (1+1=2), will expect to see two treats. (For toddlers, other objects would be used.)
+        
+        But say the scientist swipes one of the treats, or adds another so the end result is one, or three treats, respectively. "Now we're giving him the wrong equation which is 1+1=1, or 1+1=3," Coren said. Sure enough, studies show the dogs get it. "The dog acts surprised and stares at it for a longer period of time, just like a human kid would," he said.
+        
+        These studies suggest dogs have a basic understanding of arithmetic, and they can count to four or five.
+        <h3>Basic Emotions</h3>
+        
+        Other studies Coren notes have found that dogs show spatial problem-solving skills. For instance, they can locate valued items, such as treats, find better routes in the environment, such as the fastest way to a favorite chair, and figure out how to operate latches and simple machines.
+        
+        Like human toddlers, dogs also show some basic emotions, such as happiness, anger and disgust. But more complex emotions, such as guilt, are not in a dog's toolbox. (What humans once thought was guilt was found to be doggy fear, Coren noted.)
+        
+        And while dogs know whether they're being treated fairly, they don't grasp the concept of equity. Coren recalls a study in which dogs get a treat for "giving a paw."<br>
+        
+        When one dog gets a treat and the other doesn't, the unrewarded dog stops performing the trick and avoids making eye contact with the trainer. But if one dog, say, gets rewarded with a juicy steak while the other snags a measly piece of bread, on average the dogs don't care about the inequality of the treats.<br>
+      <h6> Top dogs</h6>
+        
+        To find out which dogs had the top school smarts, Coren collected data from more than 200 dog obedience judges from the United States and Canada.<br>
+        
+        He found the top dogs, in order of their doggy IQ are:<br>
+        
+        -Border collies<br>
+        -Poodles<br>
+        -German shepherds<br>
+        -Golden retrievers<br>
+        -Dobermans<br>
+        -Shetland sheepdogs<br>
+        -Labrador retrievers<br>
+        At the bottom of the intelligence barrel, Coren would include many of the hounds, such as the bassett hound and the Afghan hound, along with the bulldog, beagle and basenji (a hunting dog).<br>
+        
+        "It's important to note that these breeds which don't do as well tend to be considerably older breeds," he said. "They were developed when the task of a hound was to find something by smell or sight." These dogs might fare better on tests of so-called instinctive intelligence, which measure how well dogs do what they are bred to do.
+        
+        "The dogs that are the brightest dogs in terms of school learning ability tend to be the dogs that are much more recently developed," Coren said. He added that there's a "high probability that we've been breeding dogs so they're more responsive to human beings and human signals." So the most recently bred dogs would be more human-friendly and rank higher on school smarts.
+        
+        Many of these smarty-pants are also the most popular pets. "We like dogs that understand us," Coren said.<br>
+        
+        We also love the beagle, which made it to the top 10 list of most popular dog breeds in 2008 by the American Kennel Club. That's because they are so sweet and socialable, Coren said. "Sometimes people love the dumb blonde," Coren said.
+        
+        And sometimes the dim-wits make better pets. While a smart dog will figure out everything you want it to know, your super pet will also learn everything it can get away with, Coren warns.
+
+   </font>
+</p>
+</div>
+<footer class="bg-dark text-light py-4 mt-3">
+    <div class="container text-center">
+    <div class="row">
+       <div class="col-md-4 mb-3">
+           <h5 style="font-family:segoe script">About Us</h5>
+           <br>
+           <br>
+           <p>We provide the best services for web development. Stay connected with us!</p>
+       </div>
+       <div class="col-md-4 mb-3">
+           <h5 style="font-family:segoe script">Quick Links</h5>
+           <br>
+           <br>
+           <ul class="list-unstyled">
+               <li><a href="/home.html" class="text-light text-decoration-none">Home</a></li>
+               <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+               <li><a href="/contactus.html" class="text-light text-decoration-none">Contact</a></li>
+           </ul>
+       </div>
+       <div class="col-md-4 mb-3">
+           <h5 style="font-family:segoe script">Follow Us</h5>
+           <br>
+           <br>
+           <div>
+               <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Aff_-Xu0kin5yMJwL4iPIG-l-fwpH8EGmdVauluSqq8bRUOxRZgqawnhKpW6GR2gDSz8TIqrrzVjs_e18eMCehxSpNA9HL40vLTghnhJt0j1Iw&smuh=49203&lh=Ac8j_PuTkEHelfuRVRQ" class="text-light mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+               <a href="https://twitter-cl.vercel.app/login" class="text-light mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+               <a href="https://www.instagram.com/accounts/login/?hl=en" class="text-light mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+           </div>
+       </div>
+    </div>
+    <hr class="bg-light">
+    <p class="mb-0">© 2025 Your Company. All rights reserved.</p>
+    </div>
+    </footer>
+</div>
+</body>
+<!--boostrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

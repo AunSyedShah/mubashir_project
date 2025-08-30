@@ -1,0 +1,472 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color:#FFF1F2 ;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+ /* Fullscreen Slider */
+ .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Slider Caption Styling */
+.carousel-caption {
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    text-align: right;
+}
+
+.carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.carousel-caption .btn {
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #E11D48;
+    border: none;
+}
+
+  /* Container styles */
+  .middle-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 40rem;
+}
+
+/* Item styles with alternating layout */
+.item {
+    display: flex;
+    margin-bottom: 60px;
+    overflow: hidden;
+    width: 100%;
+    transform: translateY(50px);
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+  /* Animation class that will be added via JavaScript */
+  .item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* First item: Image right, text left */
+.item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Second item: Image left, text right */
+.item:nth-child(even) {
+    flex-direction: row;
+}
+
+/* Image container */
+.item img{
+    width: 45%;
+    border-radius: 10px;
+    display: block;
+    height: 50%;
+}
+
+.item-container img {
+    display: block;
+    width: 45%;
+    border-radius: 10px;
+    display: block;
+    height: 50%;
+}
+
+/* Text container */
+.text {
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    font-family: 'Segoe Script', cursive;
+    color: #ff7eb9;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition-delay: 0.2s;
+    transform: translateY(20px);
+}
+
+.animate h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.animate p {
+    transform: translateY(0);
+}
+
+/* Button Styling */
+.learn-more {
+    background-color: #E11D48;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10rem;
+}
+
+/* Button Hover Effect */
+.learn-more:hover {
+    background-color:#FFF1F2  ;
+    transform: scale(1.1);
+}
+ /* Scroll Animation */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .learn-more {
+    font-family: 'Segoe Script', cursive;
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff7eb9;
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .item, .item:nth-child(odd), .item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .img-container, .text {
+        width: 100%;
+    }
+}
+
+ @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .item, .item:nth-child(odd), .item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .img-container, .text {
+                width: 100%;
+            }
+        }
+
+h3{
+  
+    color: #E11D48;
+    font-size: 3ch;
+    font-style: oblique;
+    text-align: center;
+}
+
+/* Relevant Topics Section */
+.relevant-topics {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.relevant-topics h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #E11D48;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* Main Container */
+.topics-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Topic Card (For Left-Right Layout) */
+.topic-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* background: #fff; */
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 20px; */
+    gap: 20px;
+}
+
+/* Alternating Image & Text Position */
+.topic-card:nth-child(odd) .topic-image {
+    order: 1; /* Image right for odd items */
+}
+
+.topic-card:nth-child(even) .topic-image {
+    order: -1; /* Image left for even items */
+}
+
+/* Topic Image */
+.topic-image img {
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Topic Content */
+.topic-content {
+    flex: 1;
+}
+
+/* Category Styling */
+.topic-category {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.topic-card h3 {
+    margin-bottom: 15px;
+    color: #E11D48;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.topic-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 4rem;
+}
+
+/* Read More Button */
+.read-more-btn {
+    display: inline-block;
+    background-color: #E11D48;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.read-more-btn:hover {
+    background-color: #FFF1F2;
+}
+
+/* Middle Section (Vertical Images & Button) */
+.topic-middle {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle-image {
+    width: 180px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.05); */
+}
+
+.middle-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Explore Button */
+.explore-btn {
+    display: block;
+    background-color: #E11D48;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.explore-btn:hover {
+    background-color: #FFF1F2;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .topics-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .topic-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topic-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .middle-image {
+        width: 100%;
+    }
+}
+
+/* For container-fluid option */
+.container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+/* ✅ Footer Fix */
+footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;  /* Fix layout shifting */
+    bottom: 0;
+}

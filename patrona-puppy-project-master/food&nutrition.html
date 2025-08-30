@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Nutrition - Petrona Puppy</title>
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--fontawsome css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--custom css-->
+    <style>
+        /* Reset Default Margins & Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF1F2;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+    .navbar-toggler {
+        border: 1px solid #E11D48; /* Visible border */
+        outline: #E11D48;
+    }
+}
+
+
+/* Responsive Grid Layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    max-width: 800px;
+    margin: auto;
+    --s:400px; /* the size */
+    border-radius: 50%;
+    margin-top: 60rem;
+}
+
+/* Image Container */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    height: 100%;
+}
+
+/* Hover Animation: Zoom Effect */
+.gallery-item:hover img {
+    transform: scale(2.1);
+    opacity: 0.8;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Lightbox Effect (Click for Full Screen) */
+.gallery-item img:active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: both;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applying Animation */
+.answer {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.question {
+    animation: fadeIn 0.8s ease-in-out
+}
+
+img {
+    animation: fadeIn 0.8s ease-in-out
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+footer .row div {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+        body { font-family: Arial, sans-serif; }
+        .hero-section { background: url('https://source.unsplash.com/1200x600/?puppy,food') no-repeat center/cover; padding: 80px 20px; text-align: center; color: white; }
+        .content-section { padding: 50px 20px; }
+        .card img { height: 200px; object-fit: cover; }
+        body { font-family: Arial, sans-serif; }
+        .hero-section { background: url('https://source.unsplash.com/1200x600/?puppy,food,bowl') no-repeat center/cover; padding: 80px 20px; text-align: center; color: white; }
+        .content-section { padding: 50px 20px; }
+        .card img { height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <!-- MAIN CONTAINER -->
+    <div class="container-fluid p-0">
+               <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/img/logo.jpeg" alt="Logo" class="img-fluid logo">
+                <span style="font-family:segoe script" class="ms-2 site-title"><i>PETRONA PUPPY</i></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../breeds.html">Breeds</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../behaviour.html">Behaviour</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../food&nutrition.html">Food & Nutrition</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contactus.html">Contact Us</a></li>
+    
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="externalPagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Dogs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/aboutdogs/gallery.html"><i>Gallery</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/golden.html"><i>Golden Retriever</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/german.html"><i>German Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/australian.html"><i>Australian Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/pomeranian.html"><i>Pomeranian</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/siberian.html"><i>Siberian Husky</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/bulldogs.html"><i>Bulldog</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>                   
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/img/health.jpg" class="d-block w-100">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+
+    <header class="hero-section">
+        <h1 style="color: darkorange; background-color: #343a40;">Puppy Feeding Guide</h1>
+        <p style="color: black;" >Everything You Need to Know About Feeding Your Puppy</p>
+    </header>
+
+    <div class="container content-section">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Feeding Schedule</h2>
+                <p>Puppies need a consistent feeding schedule based on their age and size. Below is a general guideline:</p>
+                <ul>
+                    <li><strong>6-12 weeks:</strong> 4 meals per day</li>
+                    <li><strong>3-6 months:</strong> 3 meals per day</li>
+                    <li><strong>6-12 months:</strong> 2 meals per day</li>
+                    <li><strong>Adult Dogs:</strong> 1-2 meals per day</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/feed.jpg" alt="Puppy Feeding" class="img-fluid rounded">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/treats.html"><img src="/img/1.jpg" class="card-img-top" alt="Water"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Water Intake</h5>
+                        <p class="card-text">Ensure fresh water is available at all times for hydration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/treats.html"><img src="/img/2.jpg" class="card-img-top" alt="Food Bowl"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Portion Control</h5>
+                        <p class="card-text">Feed the right amount based on breed and activity level.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/treats.html"><img src="/img/3.jpg" class="card-img-top" alt="Healthy Treats" ></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Healthy Treats</h5>
+                        <p class="card-text">Use treats wisely for training and reward-based feeding.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer class="bg-dark text-light py-4 mt-3">
+        <div class="container text-center">
+        <div class="row">
+           <div class="col-md-4 mb-3">
+               <h5 style="font-family:segoe script">About Us</h5>
+               <br>
+               <br>
+               <p>We provide the best services for web development. Stay connected with us!</p>
+           </div>
+           <div class="col-md-4 mb-3">
+               <h5 style="font-family:segoe script">Quick Links</h5>
+               <br>
+               <br>
+               <ul class="list-unstyled">
+                   <li><a href="/home.html" class="text-light text-decoration-none">Home</a></li>
+                   <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                   <li><a href="/contactus.html" class="text-light text-decoration-none">Contact</a></li>
+               </ul>
+           </div>
+           <div class="col-md-4 mb-3">
+               <h5 style="font-family:segoe script">Follow Us</h5>
+               <br>
+               <br>
+               <div>
+                   <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Aff_-Xu0kin5yMJwL4iPIG-l-fwpH8EGmdVauluSqq8bRUOxRZgqawnhKpW6GR2gDSz8TIqrrzVjs_e18eMCehxSpNA9HL40vLTghnhJt0j1Iw&smuh=49203&lh=Ac8j_PuTkEHelfuRVRQ" class="text-light mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                   <a href="https://twitter-cl.vercel.app/login" class="text-light mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                   <a href="https://www.instagram.com/accounts/login/?hl=en" class="text-light mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+               </div>
+           </div>
+        </div>
+        <hr class="bg-light">
+        <p class="mb-0">© 2025 Your Company. All rights reserved.</p>
+        </div>
+        </footer>
+</div>  
+</body>
+<!--bootstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

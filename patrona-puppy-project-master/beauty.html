@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty - Petrona Puppy</title>
+     <!-- bootstrap link-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--fontawsome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--custom link-->
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color:#FFF1F2 ;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+ /* Fullscreen Slider */
+ .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Slider Caption Styling */
+.carousel-caption {
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    text-align: right;
+}
+
+.carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color:#E11D48;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: #E11D48;
+}
+
+.carousel-caption .btn {
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #E11D48;
+    border: none;
+}
+
+.middle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    margin-top: 40rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    /* background: #fde8d7; */
+    /* padding: 20px; */
+    border-radius: 15px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Alternating layout */
+.item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.item img {
+    width: 45%;
+    border-radius: 10px;
+    display: block;
+}
+
+.text {
+    width: 55%;
+    text-align: left;
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    opacity: 0; /* Start with invisible text */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Button Styling */
+.learn-more {
+    background-color: #E11D48;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10rem;
+}
+
+/* Button Hover Effect */
+.learn-more:hover {
+    background-color: #FFF1F2;
+    transform: scale(1.1);
+}
+
+/* Scroll Animation */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h3{
+  
+    color: #E11D48;
+    font-size: 3ch;
+    font-style: oblique;
+    text-align: center;
+}
+
+/* Relevant Topics Section */
+.relevant-topics {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.relevant-topics h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #444;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* Main Container */
+.topics-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Topic Card (For Left-Right Layout) */
+.topic-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* background: #fff; */
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 20px; */
+    gap: 20px;
+}
+
+/* Alternating Image & Text Position */
+.topic-card:nth-child(odd) .topic-image {
+    order: 1; /* Image right for odd items */
+}
+
+.topic-card:nth-child(even) .topic-image {
+    order: -1; /* Image left for even items */
+}
+
+/* Topic Image */
+.topic-image img {
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Topic Content */
+.topic-content {
+    flex: 1;
+}
+
+/* Category Styling */
+.topic-category {
+    color: #E11D48;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.topic-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.topic-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 4rem;
+}
+
+/* Read More Button */
+.read-more-btn {
+    display: inline-block;
+    background-color: #E11D48;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.read-more-btn:hover {
+    background-color: #FFF1F2;
+}
+
+/* Middle Section (Vertical Images & Button) */
+.topic-middle {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle-image {
+    width: 180px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.05); */
+}
+
+.middle-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Explore Button */
+.explore-btn {
+    display: block;
+    background-color: #E11D48;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.explore-btn:hover {
+    background-color: #FFF1F2;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .topics-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .topic-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topic-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .middle-image {
+        width: 100%;
+    }
+}
+
+/* ✅ Footer Fix */
+footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;  /* Fix layout shifting */
+    bottom: 0;
+}
+
+/* ✅ Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Footer Links */
+.footer-column a {
+    color: #f0b138;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: #e0a128;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    font-size: 22px;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #f0b138;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ✅ Footer Fix */
+footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;  /* Fix layout shifting */
+    bottom: 0;
+}
+
+/* ✅ Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Footer Links */
+.footer-column a {
+    color: #f0b138;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: #e0a128;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    font-size: 22px;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #f0b138;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+    </style>
+</head>
+<body>
+         <!-- MAIN CONTAINER -->
+         <div class="container-fluid p-0">
+            <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/img/logo.jpeg" alt="Logo" class="img-fluid logo">
+                <span style="font-family:segoe script" class="ms-2 site-title"><i>PETRONA PUPPY</i></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./breeds.html">Breeds</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./behaviour.html">Puppy Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./food&nutrition.html">Food & Nutrition</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html">Contact Us</a></li>
+    
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="externalPagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Dogs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/aboutdogs/gallery.html"><i>Gallery</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/golden.html"><i>Golden Retriever</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/german.html"><i>German Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/australian.html"><i>Australian Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/pomeranian.html"><i>Pomeranian</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/siberian.html"><i>Siberian Husky</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/bulldog.html"><i>Bulldog</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- SLIDER -->
+    <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/tip hero.jpg" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption text-end">
+                    <h2>TIP CARE PUPPY </h2> 
+                    <p>Some tip make you care your puppy well and healthy</p>
+                </div>
+            </div>
+            <div class="middle-container">
+                <div class="item">
+                    <img src="/img/tip 1.jpg" alt="Image 1">
+                    <div class="text">
+                        <h3 style="font-family:segoe script">Puppy Bathing Tip 1</h3>
+                        <br>
+                        While your puppy is small enough, the kitchen or bathroom sink makes a good puppy bath, or you can use a plastic tub. When he gets larger, switch to the shower or bath and use a non-slip mat. Make sure the water is warm, not hot.
+                        <button style="font-family:segoe script" class="learn-more" onclick="showMessage('Regular grooming keeps your puppy healthy!')">LEARN MORE</button></div>
+                </div>
+                <div class="item">
+                    <img src="/img/tip 2.jpeg" alt="Image 2">
+                    <div class="text">
+                        <h3 style="font-family:segoe script">Puppy Grooming Tip 2</h3>
+                        <br>
+                        When booking in for the first puppy dog grooming appointment, ask for a quiet day at the grooming salon and mention that it is your puppy’s first time. The groomer can only do a good job if your puppy isn’t scared. Get your puppy used to noise they will be exposed to at the salon by using the Sound Proof Puppy Training App from the iOS and Android App store.
+                      <button style="font-family:segoe script" class="learn-more" onclick="showMessage('Regular grooming keeps your puppy healthy!')">LEARN MORE</button></div>
+                </div>
+                <div class="item">
+                    <img src="/img/tip 3.jpeg" alt="Image 3">
+                    <div class="text">
+                        <h3 style="font-family:segoe script">Puppy Grooming Tip 3</h3>
+                        <br>
+                        If you are super keen, you can learn on YouTube how to express your dog’s anal glands yourself!Your dog’s skin is an indication of her overall health, so it’s important to keep it in prime shape. When a skin problem occurs, your dog may respond with excessive scratching, chewing and/or licking. A wide range of causes—including external parasites, infections, allergies, metabolic problems and stress, or a combination of these—may be to blame.
+                        <button style="font-family:segoe script" style="font-family:segoe script" class="learn-more" onclick="showMessage('Regular grooming keeps your puppy healthy!')">LEARN MORE</button></div>
+                    
+                </div>
+                <div class="item">
+                    <img src="/img/tip 4.jpeg" alt="Image 4">
+                    <div class="text">
+                        <h3 style="font-family:segoe script">Puppy Grooming Tip 3</h3>
+                        <br>
+                        For successful teeth brushing, puppies need to be trained to tolerate having a toothbrush in their mouths from a young age. Start by massaging your puppy’s lips with your finger for 30 to 60 seconds per day for a few weeks, then progress to her teeth and gums. After a few times, use a tiny amount of doggie toothpaste on your finger to get her used to the taste. When she is comfortable with this, introduce a small doggie toothbrush or finger-brush with soft bristles.
+                    
+                        <button style="font-family:segoe script" style="font-family:segoe script" class="learn-more" onclick="showMessage('Regular grooming keeps your puppy healthy!')">LEARN MORE</button>
+                    </div>
+                 
+                    </div>
+                    <div class="item">
+                        <img src="/img/images (1).jpeg" alt="Image 5">
+                        <div class="text">
+                            <h3 style="font-family:segoe script">Puppy Grooming Tip 4</h3>
+                            <br>
+                            Once your puppy starts walking on pavements, his nails will be trimmed naturally by walking on the hard surface. Regularly check the condition and length of his nails, including any ‘thumb’ nails, also known as ‘Dew claws’, higher up on the front and back feet. If they need further trimming, we suggest you take your puppy to your vet or groomer, who can do the job for you or show you how to do it safely...
+                            <button style="font-family:segoe script" class="learn-more" onclick="showMessage('Regular grooming keeps your puppy healthy!')">LEARN MORE</button>
+                        </div>
+                </div>
+        <!-- Footer content here -->
+        <footer class="bg-dark text-light py-4 mt-3">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script">About Us</h5>
+                        <br>
+                        <br>
+                        <p>We provide the best services for web development. Stay connected with us!</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script" >Quick Links</h5>
+                        <br>
+                        <br>
+                        <ul class="list-unstyled">
+                            <li><a href="/home.html" class="text-light text-decoration-none">Home</a></li>
+                            <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                            <li><a href="/contactus.html" class="text-light text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script">Follow Us</h5>
+                        <br>
+                        <br>
+                        <div>
+                            <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Aff_-Xu0kin5yMJwL4iPIG-l-fwpH8EGmdVauluSqq8bRUOxRZgqawnhKpW6GR2gDSz8TIqrrzVjs_e18eMCehxSpNA9HL40vLTghnhJt0j1Iw&smuh=49203&lh=Ac8j_PuTkEHelfuRVRQ" class="text-light mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="https://twitter-cl.vercel.app/login" class="text-light mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="https://www.instagram.com/accounts/login/?hl=en" class="text-light mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <p class="mb-0">© 2025 Your Company. All rights reserved.</p>
+            </div>
+         </footer>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script>
+            function showMessage(message) {
+                alert(message);
+            }
+
+             document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".item");
+     const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+             if (entry.isIntersecting) {
+                 entry.target.classList.add("show");
+             }
+         });
+     }, { threshold: 0.2 });
+
+     items.forEach((item) => {
+         observer.observe(item);
+     });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const textElements = document.querySelectorAll(".animated-text");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animated-text");
+            }
+        });
+    }, { threshold: 0.5 });
+
+    textElements.forEach(el => observer.observe(el));
+});
+            </script>
+</html>
+
+
+

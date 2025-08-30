@@ -1,0 +1,405 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color: #FFF1F2;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 5rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+    .navbar-toggler {
+        border: 1px solid #E11D48; /* Visible border */
+        outline: #E11D48;
+    }
+}
+
+/* Slider Caption Styling */
+.carousel-caption {
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    text-align: right;
+    margin-top: -5rem;
+
+}
+
+.carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color:black;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.carousel-caption .btn {
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #E11D48;
+    border: none;
+}
+
+/* Carousel Adjustments */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+.page-title {
+    text-align: center;
+    color: #444;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-top: 35rem;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+    flex: 0 0 250px;
+    /* background-color: white; */
+    border-radius: 5px;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+    height: 800px;
+}
+
+.filter-header {
+    background-color: #E11D48;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.filter-section {
+    padding: 10px 15px;
+    border-bottom: 1px solid #E11D48;
+}
+
+.filter-section h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.filter-option {
+    margin-bottom: 8px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+/* Dog Cards Container */
+.dog-cards {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; 
+    height: 800px;
+}
+
+.dog-card {
+    /* background-color: white; */
+    border-radius: 5px;
+    overflow: hidden;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    transition: transform 0.3s;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+}
+
+.dog-image {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.dog-info {
+    padding: 15px;
+}
+
+.dog-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.read-more {
+    color: #E11D48;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Pagination Container */
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    justify-content: center;
+    margin: 20px 0;
+    margin-top: 8rem;
+  }
+  
+  /* Pagination Items */
+  .page-item {
+    margin: 0 2px;
+  }
+  
+  /* Pagination Links */
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #E11D48;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+  }
+  
+  /* Hover state */
+  .page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+  
+  /* Active state */
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Disabled state */
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+  }
+  
+  /* First and last buttons - optional */
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    font-weight: bold;
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .filter-sidebar {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Full Width Footer CSS */
+footer.bg-dark {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* For pagination full width */
+  .pagination-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav[aria-label="Page navigation example"] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ul.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* If you still need more control */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Remove any unwanted margins around content */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* For container-fluid option */
+  .container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }

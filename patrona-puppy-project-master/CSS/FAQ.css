@@ -1,0 +1,158 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color:#FFF1F2 ;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+ /* Fullscreen Slider */
+ .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Slider Caption Styling */
+.carousel-caption {
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    text-align: right;
+}
+
+.carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.carousel-caption .btn {
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #E11D48;
+    border: none;
+}
+
+/* .faq-section {
+    background-color: white;
+} */
+
+h2{
+    color: #E11D48;
+    text-decoration: underline;
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: #E11D48;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        font-size: 0.9rem;
+    }
+    .faq-section h2 {
+        font-size: 1.5rem;
+    }
+    .accordion-body {
+        font-size: 0.85rem;
+    }
+}
+
+/* Footer Styling */
+footer {
+    /* background-color: rgba(53, 37, 48, 0.5); */
+    color: #f8f9fa;
+}
+
+footer .row div {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}

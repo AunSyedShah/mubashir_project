@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMERANIAN-petrona puppy</title>
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--fontawsome css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--custome css-->
+    <style>
+            /* Reset Default Margins & Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF1F2;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.site-title {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E11D48;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #E11D48;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: #E11D48;
+    /* color:  !important; */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+    .navbar-toggler {
+        border: 1px solid #E11D48; /* Visible border */
+        outline: #E11D48;
+    }
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the heading */
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: #E11D48;
+    text-decoration: underline;
+    margin-top: 60rem;
+}
+
+/* Make the table responsive */
+.table {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0 10px; /* Adjust the gap size */
+}
+
+/* Add padding inside rows */
+td {
+    padding: 10px 15px; /* Adjust as needed */
+}
+
+/* Style for questions and answers */
+.question {
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    color: #E11D48;
+    padding-right: 15rem; /* Adjust the gap size */
+    font-weight: bold;
+}
+
+.answer {
+    padding: 10px;
+    padding-left: 20rem; /* Adjust the gap size */
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        width: 100%;
+    }
+
+    .question,
+    .answer {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applying Animation */
+.answer {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.question {
+    animation: fadeIn 0.8s ease-in-out
+}
+
+img {
+    animation: fadeIn 0.8s ease-in-out
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+footer .row div {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+ </style>
+</head>
+<body>
+     <!-- MAIN CONTAINER -->
+     <div class="container-fluid p-0">
+               <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/img/logo.jpeg" alt="Logo" class="img-fluid logo">
+                <span style="font-family:segoe script" class="ms-2 site-title"><i>PETRONA PUPPY</i></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../breeds.html">Breeds</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../behaviour.html">Puppy Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../food&nutrition.html">Food & Nutrition</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contactus.html">Contact Us</a></li>
+    
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="externalPagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Dogs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/aboutdogs/gallery.html"><i>Gallery</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/golden.html"><i>Golden Retriever</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/german.html"><i>German Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/australian.html"><i>Australian Shepherd</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/pomeranian.html"><i>Pomeranian</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/siberian.html"><i>Siberian Husky</i></a></li>
+                            <li><a class="dropdown-item" href="/aboutdogs/bulldog.html"><i>Bulldog</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>                           
+  <!-- SLIDER -->
+  <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="/aboutdogs/img/pomeranian.jpg" class="d-block w-100" alt="Slide 1"> 
+        </div> 
+        <div>
+            <h1 id="dog-name" style="text-align: center; font-family:segoe script"><b><i>POMERANIAN</i></b></h1>
+            <table class="table table-borderless table-responsive">
+                <thead>
+                    <tr>
+                        <th colspan="2" id="dog-pic"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Origin:</b></td>
+                        <td class="answer" id="dog-origin">Poland</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Size:</b></td>
+                        <td class="answer" id="dog-size">Small</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Color:</b></td>
+                        <td class="answer" id="dog-color">Others</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Type:</b></td>
+                        <td class="answer" id="dog-typr">Purebred</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Breed Group:</b></td>
+                        <td class="answer" id="dog-breed group">Spitz</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Character:</b></td>
+                        <td class="answer" id="dog-character">Smartest</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Temperament:</b></td>
+                        <td class="answer" id="dog-temperament">Friendly, Lively, Playful, Alert And Aware Of Changes In Their Environment, Barking At New Stimuli.</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Height:</b></td>
+                        <td class="answer" id="dog-height">7-12 inches (18-30cm)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Weight:</b></td>
+                        <td class="answer" id="dog-weight">3-7 pounds (1.4-3.2kg)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Life Span:</b></td>
+                        <td class="answer" id="dog-life span">12-16 years</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Overview:</b></td>
+                        <td class="answer" id="dog-overview">The Pomeranian (often known as a Pom) is a breed of dog of the Spitz type that is named for the Pomerania region in north-west Poland and north-east Germany in Central Europe. Classed as a toy dog breed because of its small size, the Pomeranian is descended from larger Spitz-type dogs, specifically the German Spitz. The breed has been made popular by a number of royal owners since the 18th century. Queen Victoria owned a particularly smallPomeranian and consequently, the smaller variety became universally popular. During Queen Victoria's lifetime alone, the sizeof the breed decreased by half. Overall, the Pomeranian is a sturdy, healthy dog. The most common health issues are luxatingpatella and tracheal collapse. More rarely, the breed can have Alopecia X, a skin condition colloquially known as "black skindisease". This is a genetic disease which causes the dog's skin to turn black and lose all or most of its hair. As of 2017, in terms of registration figures, since at least 1998, the breed has ranked among the top fifty most popular breeds in the United States, and the current fashion for small dogs has increased their popularity worldwide.</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>History:</b></td>
+                        <td class="answer" id="dog-history">The Pomeranian is considered to be descended from the German Spitz. The breed is thought to have acquired its name by association with the area known as Pomerania which is located in northern Poland and Germany along the Baltic Sea. Although not the origin of the breed, this area is credited with the breeding which led to the original Pomeranian type of dog. Proper documentation was lacking until the breed's introduction into the United Kingdom. "A man and a woman walking next to a wood with their white dog. The woman is dressed in a white 18th-century gown and a blackhat, and the man is dressed in a black suit with white stockings." Portrait of Mr and Mrs William Hallett by Thomas Gainsborough, 1785. The painting features a larger type of Pomeranian thanis now common. An early modern recorded reference to the Pomeranian breed is from 2 November 1764, in a diary entry in James Boswell'sBoswell on the Grand Tour: Germany and Switzerland. "The Frenchman had a Pomeranian dog named Pomer whom he was mighty fondof". The offspring of a Pomeranian and a wolf bred by an animal merchant from London is discussed in Thomas Pennant's ATour in Scotland from 1769. Two members of the British Royal Family influenced the evolution of the breed. In 1767, Queen Charlotte, Queen-consort ofKing George III of Great Britain, brought two Pomeranians to England. Named Phoebe and Mercury, the dogs were depicted in paintings by Sir Thomas Gainsborough. These paintings depicted a doglarger than the modern breed, reportedly weighing as much as 30-50 lb (14-23 kg), but showing modern traits such as the heavycoat, ears and a tail curled over the back.</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family:segoe script" class="question"><b>Figure:</b></td>
+                        <td class="answer" id="dog-figure"><img src="/aboutdogs/img/pomeranian hero.jpg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer class="bg-dark text-light py-4 mt-3">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script">About Us</h5>
+                        <br>
+                        <br>
+                        <p>We provide the best services for web development. Stay connected with us!</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script">Quick Links</h5>
+                        <br>
+                        <br>
+                        <ul class="list-unstyled">
+                            <li><a href="/home.html" class="text-light text-decoration-none">Home</a></li>
+                            <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                            <li><a href="/contactus.html" class="text-light text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 style="font-family:segoe script">Follow Us</h5>
+                        <br>
+                        <br>
+                        <div>
+                            <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Aff_-Xu0kin5yMJwL4iPIG-l-fwpH8EGmdVauluSqq8bRUOxRZgqawnhKpW6GR2gDSz8TIqrrzVjs_e18eMCehxSpNA9HL40vLTghnhJt0j1Iw&smuh=49203&lh=Ac8j_PuTkEHelfuRVRQ" class="text-light mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="https://twitter-cl.vercel.app/login" class="text-light mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="https://www.instagram.com/accounts/login/?hl=en" class="text-light mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <p class="mb-0">© 2025 Your Company. All rights reserved.</p>
+            </div>
+         </footer>
+
+</div>
+</body>
+<!--bootstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
